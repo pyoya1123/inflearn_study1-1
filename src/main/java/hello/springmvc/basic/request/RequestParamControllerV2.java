@@ -15,7 +15,7 @@ import java.net.http.HttpResponse;
 @Slf4j
 public class RequestParamControllerV2 {
     @RequestMapping("/request-param-v2")
-    public String requestParamV2(@RequestParam("username") String username, @RequestParam("age") int age) throws IOException {
+    public String requestParamV2(@RequestParam(value = "username", required = true, defaultValue = "") String username, @RequestParam(value = "age", required = false, defaultValue = "0") int age) throws IOException {
 
         log.info("username={}, age={}", username, age);
 
